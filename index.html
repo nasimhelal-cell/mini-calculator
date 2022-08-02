@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <form action="">
+            <input type="number" placeholder="Enter first number" id="num1">
+            <input type="text" placeholder="+ - x / " id="operator">
+            <input type="number" placeholder="Enter second number" id="num2"> <br><br>
+            <p id="ans">Ans = ?</p>
+            <div><button type="button" id="submit" onclick="calculator()"
+                    title="please reload the page to show the ans for every new calculation">show the ans </button>
+            </div>
+        </form>
+    </center>
+    <script>
+        function calculator() {
+            var first = document.getElementById("num1").value;
+            var second = document.getElementById("num2").value;
+
+            var num1 = parseFloat(first)
+            var num2 = parseFloat(second)
+
+            var operator = document.getElementById("operator").value;
+            var submit = document.getElementById("submit");
+
+
+            var ans = document.getElementById("ans")
+            ans.innerText = (operator === "+") ? num1 + num2
+                : (operator === "-") ? num1 - num2
+                    : (operator === "*") ? num1 * num2
+                        : num1 / num2
+        }
+
+    </script>
+</body>
+
+</html>
